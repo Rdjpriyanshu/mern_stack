@@ -7,6 +7,19 @@
 // };
 // console.log(cse865);
 
+
+
+const cse23={
+  name:"Priya",
+  height:1.78,
+  weight:45,
+  calculatebmi:()=>{
+
+  }
+};
+console.log(cse23);
+
+
 // const cse965 = {
 //   name: "Aman",
 //   address: "Bihar",
@@ -107,22 +120,22 @@
 // console.log("person2: ", person2);
 
 // 5. De-structuring 
-const person1 = {
-      name: "Priyanshu",
-      height: 1.71,
-      weight: 66,
-      college: "LPU",
-      rollNumber: 65,
-      marks:{
-        maths:25,
-        EVS:42,
-      },
-    };
+// const person1 = {
+//       name: "Priyanshu",
+//       height: 1.71,
+//       weight: 66,
+//       college: "LPU",
+//       rollNumber: 65,
+//       marks:{
+//         maths:25,
+//         EVS:42,
+//       },
+//     };
 // const {name,weight}=person1;
 // console.log("name,weight ",name,weight);
 
-const person2={...person1};
-person2.name="John";
-person2.marks.maths=78;
-console.log(person1);
-console.log(person2);
+// const person2={...person1};
+// person2.name="John";
+// person2.marks.maths=78;
+// console.log(person1);
+// console.log(person2);
