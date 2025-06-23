@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.whatsapp-web-root{
+
+    display: grid;
+    grid-template-columns: 100px 1fr 0fr; /* fr use for remaining profit. */
+    height: 100vh;
+
+}
+
+.left-menu{
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    background-color: grey;
+}
+
+.chat-list{
+    background-color: rgb(219, 205, 205);
+}
+
+#chat-message-container{
+    background-color: #cfd2d3;
+    display: none;
+
+}
+
+.icon{
+    height: 60px;
+    width: 60px;
+    background-color: rgb(211,211,211,0.4);
+}
+
+
+@media(width>=600px){
+    #whatsapp-web-root{
+        display: grid;
+        grid-template-columns: 100px 1fr 0fr;
+        height: 100vh;
+    }
+}
+
