@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#card-parent{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns:repeat(auto-fit,360px);
+    gap: 1rem;
+}
+
+.trending-cards{
+    background-color: antiquewhite;
+}
+
+.card-details{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.video-thumb-image{
+    width: 100%;
+}
+
+.author-image-container{
+  background-color: black;
+}

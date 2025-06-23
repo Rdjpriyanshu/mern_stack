@@ -8263,54 +8263,60 @@ const dummydata = {
   ],
 };
 
-const cardsParent=document.getElementById("card-parent");
-const renderTrendingVideos=(dataObj)=>{
-    
-    const{list} =dataObj;  // list ek array hai dummydata me.
-    console.log(": List:",list);
-    list.forEach((ele)=>{
-    const{author,title,descriptionHTML,viewCountText,videoThumbnails,authorThumbnails}=ele;
+const cardsParent = document.getElementById("card-parent");
 
-    const newDiv=document.createElement('div');
-    newDiv.className='trending-cards';
-    newDiv.innerHTML=
-        ` <div className='video-thumbnail-container'></div>
-        <div className='card-details'>
-        <div className='author-image-container></div>
-        <div className='video-data-right'>
-        <p className='video-title'></p>
-        <div>
-       <p className='video-count'></p>
-<p className='published-text'></p>
-
-        </div>
-        </div>
-        </div>
-        `;
-       
-cardsParent.append(newDiv);
-    
-    })
-
+const handleVideo=(videoId)=>{
+    window.open(`./viewPage.html?videoId=${videoId}`,"_self");
 };
 
+const renderTrendingVideos = (dataObj) => {
+  const { list } = dataObj; // list ek array hai dummydata me.
+  console.log(": List:", list);
+  list.forEach((ele) => {
+    const {
+      title,
+      publishedText,
+      videoThumbnails,
+      viewCountText,
+      authorThumbnails,
+      videoId
+    } = ele;
 
+    const newDiv = document.createElement("div");
+    newDiv.className = "trending-cards";
+    newDiv.innerHTML = ` 
+    <div className='video-thumbnail-container' onclick="handleVideo('${videoId}')"><img src='${videoThumbnails[1].url}' class='video-thumb-image'> </div>
+    <div class='card-details'>
+            <div className='author-image-container'><img src="${authorThumbnails[1].url}" ></div>
+    <div className='video-data-right'>
+            <p className='video-title'>${title}</p>
+            <div>
+                <p className='video-count'>${viewCountText}</p>
+                <p className='published-text'>${publishedText}</p>
 
-const getTrendingVideos=()=>{
-//    const request= fetch("https://youtube138.p.rapidapi.com/v2/trending", {
-//       method: "GET",
-//       headers: {
-//         "x-rapidapi-key": "27c8d748e7msh549ffd3ea9a8ec2p106c05jsn1ef61628b898",
-//         "x-rapidapi-host": "youtube138.p.rapidapi.com",
-//       },
-//     });
+            </div>
+            </div>
+    </div>
+        `;
 
-// request.then((response)=>{
-// const pr2=response.json();
-// pr2.then((data)=>{
-//     console.log(data);
-renderTrendingVideos(dummydata);
+    cardsParent.append(newDiv);
+  });
+};
 
+const getTrendingVideos = () => {
+  //    const request= fetch("https://youtube138.p.rapidapi.com/v2/trending", {
+  //       method: "GET",
+  //       headers: {
+  //         "x-rapidapi-key": "27c8d748e7msh549ffd3ea9a8ec2p106c05jsn1ef61628b898",
+  //         "x-rapidapi-host": "youtube138.p.rapidapi.com",
+  //       },
+  //     });
+
+  // request.then((response)=>{
+  // const pr2=response.json();
+  // pr2.then((data)=>{
+  //     console.log(data);
+  renderTrendingVideos(dummydata);
 };
 
 // }).catch((err)=>{
