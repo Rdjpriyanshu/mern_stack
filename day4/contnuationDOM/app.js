@@ -1079,7 +1079,7 @@ receipe.forEach((elem) => {
 // };
 fun();
 
-recipes.forEach(({name,image,cuisine,rating,serving})=>{
+receipe.forEach(({name,image,cuisine,rating,serving})=>{
 const newDiv=document.createElement("div")
   newDiv.className="card" 
   newDiv.innerHTML = `<p>${name}</p>
