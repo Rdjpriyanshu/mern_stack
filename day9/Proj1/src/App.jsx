@@ -3,8 +3,8 @@
 
 // import { useState } from "react";
 
-// // hook ==> functon given to use by react.
-// // usestate() return the array.
+// hook ==> functon given to use by react.
+// usestate() return the array.
 
 // const App=()=>{
 //   // let search="Arun";
@@ -24,60 +24,60 @@
 // };
 // export default App;
 
-// import { useState } from "react";
+import { useState } from "react";
 
 // hook ==> functon given to use by react.
 // usestate() return the array.
 
-// const App = () => {
-//   // let search="Arun";
-//   const [monitor, remote] = useState(() => {
-//     const val = localStorage.getItem("counter-value: ");
-//     if (val > 0) {
-//       return parseInt(val);
-//     } else if (val < 0) {
-//       return 0;
-//     }
-//   });
+const App = () => {
+  // let search="Arun";
+  const [monitor, remote] = useState(() => {
+    const val = localStorage.getItem("counter-value: ");
+    if (val > 0) {
+      return parseInt(val);
+    } else if (val < 0) {
+      return 0;
+    }
+  });
 
-//   console.log(monitor); // remote for changing the value,   monitor for printing or show on the screen.
-//   const handle = () => {
-//     //  remote(monitor+1);   // hard coded direct monitor is given as a parameter
-//     //  remote(monitor + 1);
-//     remote((prev) => {
-//       const newValue = prev + 1;
-//       localStorage.setItem("counter-value: ", newValue);
-//       return newValue;
-//       // return prev+1;
-//     });
+  console.log(monitor); // remote for changing the value,   monitor for printing or show on the screen.
+  const handle = () => {
+    //  remote(monitor+1);   // hard coded direct monitor is given as a parameter
+    //  remote(monitor+2);
+    remote((prev) => {
+      const newValue = prev + 1;
+      localStorage.setItem("counter-value: ", newValue);
+      return newValue;
+      // return prev+1;
+    });
 
-//     // remote((prev) => {
-//     //   return prev + 1;
-//     // });
+    // remote((prev) => {
+    //   return prev + 1;
+    // });
 
-//     console.log(monitor);
-//   };
+    console.log(monitor);
+  };
 
-//   const handle1 = () => {
-//     remote((prev) => {
-//       const newValue = prev - 1;
-//       localStorage.setItem("Counter-value:", newValue);
-//       return newValue;
-//     });
-//   };
+  const handle1 = () => {
+    remote((prev) => {
+      const newValue = prev - 1;
+      localStorage.setItem("Counter-value:", newValue);
+      return newValue;
+    });
+  };
 
-//   const handlereset = () => {
-//     remote(0);
-//     localStorage.setItem("counter-value: ", 0);
-//   };
+  const handlereset = () => {
+    remote(0);
+    localStorage.setItem("counter-value: ", 0);
+  };
 
-//   return (
-//     <div>
-//       <button onClick={handle1}>Decrement</button>
-//       <button onClick={handle}>Increment</button>
-//       <button onClick={handlereset}>Reset</button>
-//       <h2>{monitor}</h2>
-//     </div>
-//   );
-// };
-// export default App;
+  return (
+    <div>
+      <button onClick={handle1}>Decrement</button>
+      <button onClick={handle}>Increment</button>
+      <button onClick={handlereset}>Reset</button>
+      <h2>{monitor}</h2>
+    </div>
+  );
+};
+export default App;

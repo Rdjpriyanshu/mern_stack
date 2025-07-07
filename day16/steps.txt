@@ -1,0 +1,7 @@
+how to start the server 
+
+1. npm i -g nodemon
+2. nodemon app.js  to start the server give server name
+
+
+config contains connections 
