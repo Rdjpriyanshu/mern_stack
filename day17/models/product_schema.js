@@ -23,7 +23,7 @@ const productSchema=new Schema({
             type:String,
             dafault:1,
         },
-        images:[string],
+        images:[String],
         
 },{
     versionKey:false,
