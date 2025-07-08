@@ -10,4 +10,4 @@ const kiranaSchema = new Schema({
   brand: String,
 });
 const Kirana_products = model("kirana_products", kiranaSchema);
-module.exports=Kirana_products;
+module.exports={Kirana_products};
