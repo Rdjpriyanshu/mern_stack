@@ -1,10 +1,7 @@
 const mongooose=require("mongoose");
 
-mongooose.connect(
-  "mongodb+srv://priyanshu_7:password7@cluster0.qxxgepc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-  {
+mongooose.connect(process.env.MONGO_DB_URL,{
     dbName:"day16",
-
   }
 ).then(()=>{
     console.log("---------- DB connected -----------------");
